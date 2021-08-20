@@ -103,3 +103,11 @@ class Solution:
 ```
 
 I've copied these here, because why not. I'm still very much a noob, there's no way I could've thought of these lol.
+
+---
+
+# Some resources for linked lists in Python (which I'm probably never going to read):
+
+- [Linked Lists in Python: An Introduction (Real Python)](https://realpython.com/linked-lists-python)
+- [Linked List | Set 1 (Introduction) (GeeksforGeeks)](https://www.geeksforgeeks.org/linked-list-set-1-introduction/)
+
