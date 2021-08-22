@@ -12,7 +12,7 @@ class Solution:
         total = 0
         for i in range(1, l):
             if val[s[i-1]] < val[s[i]]: # Comparing the current element with the previous element
-                #Looking at the next step (``else`` block), we are adding val[s[i-1]], so we need to subtract twice.
+                #Looking at the next step (else block), we are adding val[s[i-1]], so we need to subtract twice.
                 total = total + val[s[i]] - (val[s[i-1]])*2             
             else:
                 total = total + val[s[i]]
