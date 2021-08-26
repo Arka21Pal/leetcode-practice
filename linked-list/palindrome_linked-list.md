@@ -1,5 +1,7 @@
 # Simple: Given the `head` of a singly linked list, return `true` if it is a palindrome. 
 
+Link: https://leetcode.com/problems/palindrome-linked-list/
+
 ---
 
 Like every other person, I proceeded to convert the number into a string and checked it. Sure, it got accepted. But that's not what I'm looking for here.

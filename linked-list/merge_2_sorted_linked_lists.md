@@ -7,6 +7,8 @@ The approach is really easy:
 - Compare each value of the 2 linked lists, and create a node in the empty list == the node of list with the least value.
 - Iterate through the new linked list and follow the same procedure.
 
+Link: https://leetcode.com/problems/merge-two-sorted-lists/
+
 ## My code (unoriginal, but I at least I thought of it myself):
 
 ```python
