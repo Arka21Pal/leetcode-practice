@@ -2,10 +2,10 @@
 
 Given a string, determine if the string is valid.
 
-> Input: s = "()[]{}"
+> Input: s = "()[]{}"  
 > Output: true
 
-> Input: s = "([)]"
+> Input: s = "([)]"  
 > Output: false
 
 *Link:* https://leetcode.com/problems/valid-parentheses/
