@@ -1,4 +1,4 @@
-# Implement`strStr()`
+#[Implement`strStr()`](https://leetcode.com/problems/implement-strstr)
 
 Looks easy (and is actually quite easy to do in Python, from my second solution), but I'm a bit dumb so couldn't catch the idea sooner.
 
