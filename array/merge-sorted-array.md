@@ -28,4 +28,6 @@ class Solution:
         nums1[m:n+m]=nums2[:n]
         nums1.sort()
 ```
-Although I'm not very sure why we need `nums2[:n]`, I tried with just `nums2` on the RHS, the solution took 4 milliseconds more.
+<del>Although I'm not very sure why we need `nums2[:n]`, I tried with just `nums2` on the RHS, the solution took 4 milliseconds more.</del>
+
+Got it! Using `nums2[:n]` here because *every element till `n`* from `nums2` needs to be put into `nums1` for this approach. It's also why we leave `n` space in `nums1` by shifting numbers from `nums2` between `m` and `n+m` in `nums1`.
