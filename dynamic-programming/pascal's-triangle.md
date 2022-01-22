@@ -48,6 +48,10 @@ class Solution:
                 # Access each individual list from the big list above
                 # Add consecutive numbers from the previous list and append to the present list
                 pascal[i][j] = pascal[i-1][j-1] + pascal[i-1][j]
+                # An easy example would be to imagine a row
+                # The third row of the triangle is: [1,2,1]
+                # Thus, for the second element of the fourth row, we need,
+                # pascal[4][2] = pascal[3][1] + pascal[3][2]: this equates to 1 + 2 = 3
         return pascal
 ```
 
