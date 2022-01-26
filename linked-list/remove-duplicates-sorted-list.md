@@ -1,11 +1,13 @@
-# [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
+# [83. Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/)
 
 > Given the `head` of a sorted linked list, *delete all duplicates such that each element appears only once*. Return *the linked list **sorted** as well*.
 
 Easy problem, however the sticking point here is that `head` is the only variable that knows what its `next` is. Thus, while declaring any other variable, we need to explicitly set `variable.next` = `head.next`.
 
 ## My solution
+
 Shamelessly copied from another solution: [python simple solution time O(N) space O(1)](https://leetcode.com/problems/remove-duplicates-from-sorted-list/discuss/1492445/python-simple-solution-time-O(N)-space-O(1))
+
 ```python
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
@@ -38,6 +40,37 @@ class Solution:
         # Return the variable which keeps track of the value of head. I learnt this because head returns [0]
         return origin
 ```
+
+## Solution 2
+
+Link: https://leetcode.com/problems/remove-duplicates-from-sorted-list/discuss/1718548/Clean-Recusrsion
+
+```python
+class Solution:
+    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+
+        # Return "head" if it doesn't exist
+        if not head:
+            return head
+
+        # If a duplicate element is found
+        if head.next and head.val == head.next.val:
+            # Skip the element by calling the original function again, but set the value of this element as the next element
+            head = self.deleteDuplicates(head.next)
+        else:
+            # If not, simply set the value of the next value with calling the function for the next element
+            head.next = self.deleteDuplicates(head.next)
+
+        # This is the reason this works
+        # At the end of all of the recursive loops, the function will finally return "head"
+        # Which means all of the elements which have been skipped, will now have the value of the next element automatically
+        # And the elements not skipped, will also have the correct values
+        # Without this statement, this approach of recursion wouldn't have worked
+
+        return head
+```
+
+I didn't clearly understand this solution however.
 
 ## Resources:
 Some other solutions,
