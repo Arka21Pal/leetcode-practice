@@ -2,16 +2,6 @@
 
 > Given the `root` of a binary tree, *check whether it is a mirror of itself* (i.e., symmetric around its centre).
 
-
-Unfortunately, nothing that I've tried is working. It exits with this error:
-```
-NameError: name 'Solution' is not defined
-    ret = Solution().isSymmetric(param_1)
-    Line 55 in _driver (Solution.py)
-        _driver()
-        Line 66 in <module> (Solution.py)
-```
-
 The basic idea here is to compare the right side of the left node with the left side of the right node, and vice versa.
 
 ## My proposed solution
@@ -19,24 +9,25 @@ The basic idea here is to compare the right side of the left node with the left 
 Shamelessly copied from: https://leetcode.com/problems/symmetric-tree/discuss/1693514/how-recursion-solves-this-problem..
 
 ```python
-def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
 
-    # Return True if root is none, because a non-existent tree is considered symmetrical
-    if root == None: return True
+        # Return True if root is none, because a non-existent tree is considered symmetrical
+        if root == None: return True
 
-    # Function for recursion
-    def repeat(right,left):
-        # If right and left don't exist, i.e. if the right and left node from root (and so on), do not exist
-        if right is None and left is None:
-            return True
-        # If however, they do exist, and their values match
-        # Go through the function once again, this time with the next values of both right and left
-        if right and left and right.val == left.val:
-            return repeat(right.right,left.left) and repeat(right.left,left.right)
-        # If that doesn't work, return False
-        else: return False
+        # Function for recursion
+        def repeat(right,left):
+            # If right and left don't exist, i.e. if the right and left node from root (and so on), do not exist
+            if right is None and left is None:
+                return True
+            # If however, they do exist, and their values match
+            # Go through the function once again, this time with the next values of both right and left
+            if right and left and right.val == left.val:
+                return repeat(right.right,left.left) and repeat(right.left,left.right)
+            # If that doesn't work, return False
+            else: return False
 
-    return repeat(root.right,root.left)
+        return repeat(root.right,root.left)
 ```
 
 ## Another solution using "iteration"
