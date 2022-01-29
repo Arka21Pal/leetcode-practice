@@ -60,7 +60,7 @@ class Solution:
             if node1 == None and node2 == None:
                 continue
 
-            # If either node doesn't exist or their values don't match, return False
+            # If a node on one side doesn't exist or their values don't match, return False
             if node1 == None or node2 == None or node1.val != node2.val:
                 return False
 
