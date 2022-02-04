@@ -6,6 +6,28 @@
 
 The easiest approach to this would be recursion.
 
+The logic here is simple:\
+We simply need to go through the elements in the tree, and check if adding these elements equals to the `targetSum`.
+
+In the first solution,
+- We define a function which we will call recursively.
+- Then, we check if the node exists.
+- After that, we increment the value of "total" by the value of the current node.
+- We check if we have reached the end of the tree, and if the sum of values matches `targetSum`.
+- Because we need to cover every node in the tree, we define two variables, one handling the left side, and the other handling the right side of the tree.
+    - This is only possible because we start with the root as the `node` (end of the program).
+- Then, we return either of the two variables, because even if one of them gets the desired result (a total value that matches the target), then our objective is fulfilled.
+- Finally, we start with the `node` being `root` and the `total` being `0`.
+
+In the second solution,
+- The idea is the same as in the first solution, but we use a few different methods of implementation.
+- The main difference here is the usage of the `deque` class instead of the `leftMatch` and `rightMatch` variables which we used in the first solution.
+- So, every time the loop runs, we append the next value of the node and the remaining difference between the target and the current value, to a stack.
+- Instead of holding the left and right node values and the subsequent recursion that comes with it, we simply append the values of the left and right nodes to the stack. Because we keep popping the stack every time the loop runs, we stay up-to-date and do not miss elements.
+- Some parts are the same, like checking if the addition of our elements matches `targetSum` at the end of the tree.
+
+Overall, iteration is easier to understand, however recursion is easier to implement.
+
 ## Solution 1
 
 Copied from: https://leetcode.com/problems/path-sum/discuss/1696898/Python-or-Recursive-or-Easy-to-read
