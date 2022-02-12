@@ -4,6 +4,41 @@
 
 The basic idea here is to compare the right side of the left node with the left side of the right node, and vice versa.
 
+## My solution
+
+Link: https://leetcode.com/submissions/detail/639723160/
+
+I was revising this problem, and came up with a fast and easy solution. The logic is the same as above.
+
+Stats:
+> Runtime: 28 ms, faster than 97.61% of Python3 online submissions for Symmetric Tree.
+> Memory Usage: 14 MB, less than 91.25% of Python3 online submissions for Symmetric Tree.
+
+```python
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        def recurse(node1, node2):
+
+            # If both nodes don't exist, we have reached the end of both subtrees
+            if not node1 and not node2: return True
+
+            # If either node doesn't exist, obviously it is asymmetrical
+            if not node1 or not node2:  return False
+
+            # If the value of one node is not equal to the value of the other node, the tree is asymmetrical
+            if node1.val != node2.val:  return False
+
+            # Recursively get both the left and right subtrees for comparison
+            left = recurse(node1.left, node2.right)
+            right = recurse(node1.right, node2.left)
+
+            # Only if the two subtrees are symmetrical, will this function return True
+            return left and right
+
+        # Start the function from the left and right subtrees, from the root
+        return recurse(root.left, root.right)
+```
+
 ## My proposed solution
 
 Shamelessly copied from: https://leetcode.com/problems/symmetric-tree/discuss/1693514/how-recursion-solves-this-problem..
