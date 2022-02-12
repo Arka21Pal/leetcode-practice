@@ -1,6 +1,8 @@
 # [637. Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/)
 
-> Given the `root` of a binary tree, return *the average value of the nodes on each level in the form of an array*. Answers within `10^-5` of the actual answer will be accepted.
+<blockquote>
+Given the <code>root</code> of a binary tree, return <i>the average value of the nodes on each level in the form of an array</i>. Answers within <code>10<sup>-5</sup></code> of the actual answer will be accepted.
+</blockquote>
 
 The only problem here is, how do we keep track of which level each element belongs to? The solution below uses a great approach: use dictionary keys as levels (as these are only thing common between elements in the same level), and then simply find the average from the list (which will be the value of the respective key [which are the levels themselves]).
 
