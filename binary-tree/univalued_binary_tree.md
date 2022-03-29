@@ -34,3 +34,33 @@ class Solution:
         # Finally, return the recursive function to get the internal return values as expected output
         return recurse(root)
 ```
+
+## Solution 2
+
+Copied from a random solution, but I had the right idea.
+
+```python
+class Solution:
+    def isUnivalTree(self, root: Optional[TreeNode]) -> bool:
+
+        # When using a while loop to traverse a binary tree, always use a stack of some sort
+        stack = collections.deque([root])
+
+        # The required value
+        value = root.val
+
+        while stack:
+
+            # Get the most recent value from the stack
+            node = stack.popleft()
+
+            # If the value doesn't match, stop immediately
+            if node.val != value: return False
+
+            # Append both left and right nodes to the stack to keep the traversal going
+            if node.left: stack.append(node.left)
+            if node.right: stack.append(node.right)
+
+        # Assuming the loop finished without a problem, the binary tree is univalued
+        return True
+```
